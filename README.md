@@ -500,7 +500,7 @@ spec:
 
 Créer un volume EFS en suivant les étapes décrites dans la [documentation AWS](https://docs.aws.amazon.com/efs/latest/ug/gs-step-two-create-efs-resources.html).
 
-![](2024-08 AWS Console EFS.png)
+![Console EFS](./2024-08%20AWS%20Console%20EFS.png)
 
 Créer la **StorageClass** associée au volume EFS.
 
