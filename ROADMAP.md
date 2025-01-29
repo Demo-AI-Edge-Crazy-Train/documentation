@@ -36,3 +36,6 @@ Why: all customers want the train to stop when there are obstacles on the train 
 
 For example: when the train stops because of an obstacle on the lane, a message is announced in the train station to warn about possible delays.
 
+## 10. Add support for inference using AMD hardware (either CPU or GPU)
+
+Why: currently the AI Pod is based on Ubuntu. Using AMD for inference might help us use UBI instead.
