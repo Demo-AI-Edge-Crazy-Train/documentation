@@ -522,6 +522,7 @@ parameters:
 En suivant la documentation [OpenShift 4.15](https://docs.openshift.com/container-platform/4.15/storage/container_storage_interface/persistent-storage-csi-aws-efs.html#efs-create-volume_persistent-storage-csi-aws-efs), modifier le **Security Group** EFS pour autoriser les noeuds OpenShift à accéder au stockage via le protocole NFS.
 
 On the [EFS console](https://console.aws.amazon.com/efs) :
+
 1. On the **Network** tab, copy the Security Group ID (you will need this in the next step).
 2. Go to [Security Groups](https://console.aws.amazon.com/ec2/v2/home#SecurityGroups), and find the Security Group used by the EFS volume.
 3. On the **Inbound rules** tab, click **Edit inbound rules**, and then add a new rule with the following settings to allow OpenShift Container Platform nodes to access EFS volumes :
@@ -530,7 +531,7 @@ On the [EFS console](https://console.aws.amazon.com/efs) :
     - **Port range**: 2049
     - **Source**: Custom/IP address range of your nodes (for example: “10.0.0.0/16”)
 
-![](2024-08 AWS Console - Security Group for EFS.png)
+![Security Group for EFS](./2024-08%20AWS%20Console%20-%20Security%20Group%20for%20EFS.png)
 
 Désactiver l’**affinity-assistant** dans la configuration Tekton.
 
@@ -1273,7 +1274,7 @@ Et créer une application OAuth [dans l'orga GitHub](https://github.com/organiza
 - **Homepage URL**: *libre choix*
 - **Authorization callback URL**: *le résultat de la commande ci-dessus*
 
-![](2024-11 OpenShift DevSpaces - GitHub OAuth Application.png)
+![OpenShift DevSpaces - GitHub OAuth Application](./2024-11%20OpenShift%20DevSpaces%20-%20GitHub%20OAuth%20Application.png)
 
 Créer le secret correspondant :
 
