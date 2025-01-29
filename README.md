@@ -4,16 +4,6 @@
 
 Get a blank AWS environment and be sure to have the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
 
-Je trouve la dernière version stable à partir du [repository cincinnati](https://github.com/openshift/cincinnati-graph-data/tree/master/channels).
-
-Téléchargement de la CLI OpenShift **multi architecture**.
-
-```sh
-OPENSHIFT_VERSION=4.16.20
-curl -sfL https://mirror.openshift.com/pub/openshift-v4/multi/clients/ocp/$OPENSHIFT_VERSION/amd64/openshift-install-linux.tar.gz | tar -zx -C ~/local/bin openshift-install
-curl -sfL https://mirror.openshift.com/pub/openshift-v4/multi/clients/ocp/$OPENSHIFT_VERSION/amd64/openshift-client-linux-$OPENSHIFT_VERSION.tar.gz | tar -zx -C ~/local/bin oc kubectl
-```
-
 Je configure la CLI AWS.
 
 ```sh
@@ -23,6 +13,18 @@ cd ~/tmp/$ENV_NAME
 export AWS_CONFIG_FILE=$HOME/tmp/$ENV_NAME/.aws/config
 export AWS_SHARED_CREDENTIALS_FILE=$HOME/tmp/$ENV_NAME/.aws/credentials
 aws configure
+```
+
+## OpenShift
+
+Je trouve la dernière version stable à partir du [repository cincinnati](https://github.com/openshift/cincinnati-graph-data/tree/master/channels).
+
+Téléchargement de la CLI OpenShift **multi architecture**.
+
+```sh
+OPENSHIFT_VERSION=4.16.20
+curl -sfL https://mirror.openshift.com/pub/openshift-v4/multi/clients/ocp/$OPENSHIFT_VERSION/amd64/openshift-install-linux.tar.gz | tar -zx -C ~/local/bin openshift-install
+curl -sfL https://mirror.openshift.com/pub/openshift-v4/multi/clients/ocp/$OPENSHIFT_VERSION/amd64/openshift-client-linux-$OPENSHIFT_VERSION.tar.gz | tar -zx -C ~/local/bin oc kubectl
 ```
 
 Fichier **install-config.yaml** :
@@ -1129,6 +1131,8 @@ Webhook parameters :
 - **SSL verification**: `disabled`
 - **Shared Secret**: `REDACTED`
 
+## Reconfiguration du train
+
 **Mettre à jour la configuration du train**
 
 Récupérer l'adresse du Load Balancer du Kafka
@@ -1190,7 +1194,7 @@ S'il a du mal à s'y connecter, le supprimer.
 oc -n train delete pod -l app=train-controller
 ```
 
-### Déployer le Lab
+## Déployer le Lab
 
 Je reprends ce qu'on avait fait pour le Riviera Dev mais je n'ai pas beaucoup de notes.
 
